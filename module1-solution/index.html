@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en" >
+  <head>
+    <script src="angular.js"></script>
+    <script src = "app.js"></script>
+    <title>Lunch Checker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <style>
+      .class1 { font-size: 1.3em; font-weight: bold; color: green; border-style: solid;}
+      .class2 { font-size: 1.3em; font-weight: bold; color: red; border-style: solid;}
+    </style>
+  </head>
+<body ng-app='LunchCheck'>
+   <div ng-controller = 'LunchCheckController' class="container">
+     <h1>Lunch Checker</h1>
+
+         <div class="form-group">
+             <input ng-model = "menu" id="lunch-menu" type="text"
+             placeholder = {{dishes}}
+             class="form-control">
+         </div>
+         <div>We do not count any empty item as an item towards the count!
+         </div>
+         <div class="form-group"> <br>
+             <button  ng-click = "check()"
+                      class="btn btn-default">Check If Too Much</button>
+         </div>
+
+         <div ng-class = "changeColor";
+              class="form-group message">
+            {{message}}         </div>
+   </div>
+
+</body>
+</html>
